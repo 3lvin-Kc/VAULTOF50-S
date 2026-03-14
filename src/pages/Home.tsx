@@ -12,7 +12,7 @@ import type { Movie } from "../lib/database.types";
 import { Helmet } from "react-helmet-async";
 import { STATIC_SEO } from "../utils/seo";
 
-const FEATURED_MOVIE_ID = 4707; // Set to movie ID you want featured, or null for auto
+const FEATURED_MOVIE_ID = 823; // Set to movie ID you want featured, or null for auto
 
 export default function Home() {
   const [featuredMovie, setFeaturedMovie] = useState<Movie | null>(null);
@@ -56,8 +56,7 @@ export default function Home() {
               <p className="font-mono text-[11px] uppercase tracking-[3px] text-red-700">
                 Latest Stories
               </p>
-              <h1 className="font-UnifrakturMaguntia text-4xl md:text-6xl text-gray-800 leading-none mt-2">
-              </h1>
+              <h1 className="font-UnifrakturMaguntia text-4xl md:text-6xl text-gray-800 leading-none mt-2"></h1>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <p className="font-mono text-[10px] uppercase tracking-[2px] text-gray-500">
