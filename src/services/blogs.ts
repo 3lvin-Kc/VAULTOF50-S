@@ -76,20 +76,18 @@ export async function fetchBlogMovies(blogId: number): Promise<BlogMovie[]> {
 export async function fetchRelatedBlogs(blogId: number): Promise<RelatedBlog[]> {
   const { data, error } = await (supabase
     .from("blog_related" as any)
-    .select(
-      `
-      related_blog_id,
-      blogs!inner(
-        id,
-        title,
-        slug,
-        cover_image,
-        excerpt
-      )
-    `,
-    )
+    .select("related_blog_id, related_blog:blogs!blog_related_related_blog_id_fkey(id, title, slug, cover_image, excerpt)")
     .eq("blog_id", blogId) as any);
 
   if (error) throw new Error(`Failed to fetch related blogs: ${error.message}`);
-  return (data as RelatedBlog[]) ?? [];
+
+  const result = (data as any[])?.map((row) => ({
+    id: row.related_blog.id,
+    title: row.related_blog.title,
+    slug: row.related_blog.slug,
+    cover_image: row.related_blog.cover_image,
+    excerpt: row.related_blog.excerpt,
+  })) ?? [];
+
+  return result;
 }

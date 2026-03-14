@@ -9,6 +9,8 @@ import {
 } from "../services/movies";
 import { Link } from "react-router-dom";
 import type { Movie } from "../lib/database.types";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 const FEATURED_MOVIE_ID = 4707; // Set to movie ID you want featured, or null for auto
 
@@ -43,6 +45,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-transparent flex flex-col">
+      <Helmet>
+        <title>{STATIC_SEO.home.title}</title>
+        <meta name="description" content={STATIC_SEO.home.description} />
+      </Helmet>
       <section className="border-b border-gray-200 px-6 py-8 md:py-10">
         <div className="mx-auto max-w-screen-xl">
           <div className="mb-6 flex items-center justify-between">

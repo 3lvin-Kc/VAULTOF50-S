@@ -4,6 +4,8 @@ import { useMovies } from "../hooks/useMovies";
 import MovieGrid from "../components/movie/MovieGrid";
 import FilterBar from "../components/filters/FilterBar";
 import type { MovieFilters } from "../services/movies";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 const DECADES = [
   { label: "1950s", from: 1950, to: 1959 },
@@ -41,6 +43,10 @@ export default function Browse() {
 
   return (
     <div className="min-h-screen bg-transparent">
+      <Helmet>
+        <title>{STATIC_SEO.browse.title}</title>
+        <meta name="description" content={STATIC_SEO.browse.description} />
+      </Helmet>
       <div className="border-b border-gray-200 px-6 py-12">
         <p className="font-mono text-[11px] uppercase tracking-[4px] text-red-700 mb-3">
           The Archive

@@ -9,6 +9,7 @@ export interface Series {
   cover_image: string | null;
   subject: string;
   created_at: string;
+  is_published: boolean;
   parts?: SeriesPart[];
 }
 
@@ -35,6 +36,7 @@ export async function getAllSeries(): Promise<Series[]> {
       parts:series_parts(id, slug, title, subtitle, part_number, decades, countries)
     `,
     )
+    .eq("is_published", true)
     .order("id") as any);
 
   if (error) throw error;
@@ -56,6 +58,7 @@ export async function getSeriesBySlug(slug: string): Promise<Series | null> {
     `,
     )
     .eq("slug", slug)
+    .eq("is_published", true)
     .single() as any);
 
   if (error) return null;
@@ -73,8 +76,9 @@ export async function getSeriesPart(
 ): Promise<SeriesPart | null> {
   const { data: seriesData } = await (supabase
     .from("series" as any)
-    .select("id, slug, title, subject")
+    .select("id, slug, title, subject, is_published")
     .eq("slug", seriesSlug)
+    .eq("is_published", true)
     .single() as any);
 
   if (!seriesData) return null;

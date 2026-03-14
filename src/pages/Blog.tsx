@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useBlogs } from "../hooks/useBlogs";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
@@ -26,6 +28,10 @@ export default function Blog() {
 
   return (
     <div className="blog-page">
+      <Helmet>
+        <title>{STATIC_SEO.blogs.title}</title>
+        <meta name="description" content={STATIC_SEO.blogs.description} />
+      </Helmet>
       <div className="blog-header">
         <h1 className="blog-title">
           The <span className="blog-title-accent">Vault</span> Journal

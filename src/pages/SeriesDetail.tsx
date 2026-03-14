@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useSeries } from "../hooks/useSeries";
+import { Helmet } from "react-helmet-async";
+import { pageTitle } from "../utils/seo";
 
 export default function SeriesDetail() {
   const { seriesSlug } = useParams<{ seriesSlug: string }>();
@@ -29,6 +31,12 @@ export default function SeriesDetail() {
 
   return (
     <div className="series-detail-page">
+      {series && (
+        <Helmet>
+          <title>{pageTitle(`The ${series.title} Tradition in World Cinema`)}</title>
+          <meta name="description" content={series.subtitle || ""} />
+        </Helmet>
+      )}
       {/* Header */}
       <div className="series-detail-header">
         <div className="series-detail-header-inner">

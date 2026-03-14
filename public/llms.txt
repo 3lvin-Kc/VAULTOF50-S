@@ -1,0 +1,42 @@
+# VaultOf50 - AI Search / LLM Crawler File
+
+## Site Overview
+VaultOf50 is a horror film archive covering 1950-2000. Every country. Every decade. Built by fans who take horror seriously.
+
+## Site Structure
+
+### Main Sections
+- / — Home — Featured horror films from the archive
+- /browse — Browse all horror films (1950-2000)
+- /blog — Horror film essays and articles
+- /threads — Deep dive series (Frankenstein, Dracula, The Mummy, Haunted House)
+- /community — Community-written horror content
+- /submit — Submit writing to the archive
+
+### Blog Categories
+- Genre Deep Dives — Analysis of horror subgenres
+- Country Profiles — Horror films by country
+
+### Thread Series
+- Frankenstein — The monster across world cinema
+- Dracula — The vampire across world cinema  
+- The Mummy — Ancient horror across world cinema
+- Haunted House — The house in horror cinema
+
+### Example Blog Posts
+- Italian Horror 1970s: Giallo
+- UK Hammer Horror
+- Japanese Horror 1950s-1999
+- German Horror Expressionism
+- American Horror: Blaxploitation
+
+### Example Thread Parts
+- Frankenstein: The Origin
+- Dracula: Hammer Owns Dracula
+- Haunted House: Japan Builds the Wrong House
+
+## Content Type
+Long-form essays, film analyses, deep dives into horror cinema history. All content is original writing.
+
+## Contact
+For inquiries: [contact email if available]

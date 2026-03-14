@@ -4,6 +4,8 @@ import { useAuth } from "../hooks/useAuth";
 import { useMyContributions, useDeleteContribution } from "../hooks/useContributions";
 import { submitContribution, TYPE_LABELS } from "../services/contributions";
 import type { ContributionType } from "../services/contributions";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 const SUBMIT_STYLES = `
   .submit-page {
@@ -866,6 +868,10 @@ function SubmitForm({ userId }: { userId: string }) {
 
   return (
     <>
+      <Helmet>
+        <title>{STATIC_SEO.submit.title}</title>
+        <meta name="description" content={STATIC_SEO.submit.description} />
+      </Helmet>
       {pendingCount > 0 && (
         <div className="submit-pending-notice">
           <div className="submit-pending-inner">

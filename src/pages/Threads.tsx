@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAllSeries } from "../hooks/useSeries";
 import type { Series } from "../services/series";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 function SeriesCard({ s }: { s: Series }) {
   const allCountries = Array.from(
@@ -70,6 +72,10 @@ export default function Threads() {
 
   return (
     <div className="threads-page">
+      <Helmet>
+        <title>{STATIC_SEO.threads.title}</title>
+        <meta name="description" content={STATIC_SEO.threads.description} />
+      </Helmet>
       <div className="threads-header">
         <div className="threads-header-inner">
           <div className="threads-eyebrow">The Threads</div>

@@ -1,0 +1,10 @@
+# Robots.txt for VaultOf50
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vault-50.co/sitemap.xml
+
+# Disallow admin/private areas
+Disallow: /submit

@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useMovieDetail, useSimilarMovies } from "../hooks/useMovies";
 import { getPosterUrl, getBackdropUrl } from "../services/movies";
 import MovieCard from "../components/movie/MovieCard";
+import { Helmet } from "react-helmet-async";
+import { pageTitle } from "../utils/seo";
 
 function money(value: number | null): string {
   if (!value) return "Unknown";
@@ -64,6 +66,33 @@ export default function MovieDetail() {
 
   return (
     <div className="min-h-screen bg-transparent text-[#1f2328]">
+      {movie && (
+        <Helmet>
+          <title>{pageTitle(`${movie.title} (${movie.release_year})`)}</title>
+          <meta
+            name="description"
+            content={
+              movie.overview
+                ? movie.overview.slice(0, 155)
+                : `${movie.title} — horror film from ${movie.release_year} in the VaultOf50 archive.`
+            }
+          />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Movie",
+              "name": movie.title,
+              "description": movie.overview,
+              "datePublished": String(movie.release_year),
+              "publisher": {
+                "@type": "Organization",
+                "name": "VaultOf50"
+              },
+              "url": `https://vault-50.co/movie/${movie.id}`
+            })}
+          </script>
+        </Helmet>
+      )}
       <section className="relative border-b border-[#d9d2c4]">
         {backdropUrl ? (
           <img

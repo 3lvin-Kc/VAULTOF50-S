@@ -1,5 +1,9 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useBlog, useBlogMovies, useRelatedBlogs } from "../hooks/useBlogs";
+import { Helmet } from "react-helmet-async";
+import { pageTitle } from "../utils/seo";
+import { RelatedLinks } from "../components/RelatedLinks";
+import { BLOG_RELATED_LINKS } from "../utils/relatedLinks";
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 const TMDB_POSTER_BASE = "https://image.tmdb.org/t/p/w342";
@@ -41,6 +45,30 @@ export default function BlogDetail() {
 
   return (
     <div className="blog-detail-page">
+      {blog && (
+        <Helmet>
+          <title>{pageTitle(blog.title)}</title>
+          <meta name="description" content={blog.excerpt || ""} />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": blog.title,
+              "description": blog.excerpt,
+              "author": {
+                "@type": "Organization",
+                "name": "VaultOf50"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "VaultOf50",
+                "url": "https://vault-50.co"
+              },
+              "url": `https://vault-50.co/blog/${blog.slug}`
+            })}
+          </script>
+        </Helmet>
+      )}
       <div className="blog-detail-back">
         <button onClick={() => navigate(-1)} className="blog-back-btn">
           ← Back
@@ -56,6 +84,7 @@ export default function BlogDetail() {
     <p key={i}>{paragraph}</p>
   ))}
 </div>
+        <RelatedLinks links={BLOG_RELATED_LINKS[blog.slug] ?? []} />
       </article>
 
       {movies.length > 0 && (

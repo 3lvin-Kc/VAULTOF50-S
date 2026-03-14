@@ -1,6 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { useSeriesPart } from "../hooks/useSeries";
 import { useSeries } from "../hooks/useSeries";
+import { Helmet } from "react-helmet-async";
+import { pageTitle } from "../utils/seo";
+import { RelatedLinks } from "../components/RelatedLinks";
+import { THREAD_RELATED_LINKS } from "../utils/relatedLinks";
 
 function PartContent({ content }: { content: string }) {
   const paragraphs = content.split("\n\n").filter(Boolean);
@@ -55,6 +59,37 @@ export default function PartDetail() {
 
   return (
     <div className="part-detail-page">
+      {part && series && (
+        <Helmet>
+          <title>
+            {pageTitle(`${part.title} — ${series.title} Part ${part.part_number}`)}
+          </title>
+          <meta name="description" content={part.subtitle || ""} />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": `${part.title} — ${series.title} Part ${part.part_number}`,
+              "description": part.subtitle,
+              "author": {
+                "@type": "Organization",
+                "name": "VaultOf50"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "VaultOf50",
+                "url": "https://vault-50.co"
+              },
+              "url": `https://vault-50.co/threads/${seriesSlug}/${part.slug}`,
+              "isPartOf": {
+                "@type": "Series",
+                "name": series.title,
+                "url": `https://vault-50.co/threads/${seriesSlug}`
+              }
+            })}
+          </script>
+        </Helmet>
+      )}
       {/* Top nav */}
       <div className="part-top-nav">
         <Link to={`/threads/${seriesSlug}`} className="series-nav-link">
@@ -100,6 +135,7 @@ export default function PartDetail() {
       <div className="part-body">
         <div className="part-body-inner">
           {part.content && <PartContent content={part.content} />}
+          <RelatedLinks links={THREAD_RELATED_LINKS[part.slug] ?? []} />
         </div>
       </div>
 

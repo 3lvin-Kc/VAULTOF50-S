@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { usePublishedContributions } from "../hooks/useContributions";
 import { TYPE_LABELS } from "../services/contributions";
 import type { Contribution } from "../services/contributions";
+import { Helmet } from "react-helmet-async";
+import { STATIC_SEO } from "../utils/seo";
 
 function ContributionCard({ c }: { c: Contribution }) {
   const date = new Date(c.created_at).toLocaleDateString("en-US", {
@@ -35,6 +37,10 @@ export default function Community() {
 
   return (
     <div className="community-page">
+      <Helmet>
+        <title>{STATIC_SEO.community.title}</title>
+        <meta name="description" content={STATIC_SEO.community.description} />
+      </Helmet>
       <div className="community-header">
         <div className="community-header-inner">
           <div className="community-eyebrow">From the Community</div>
