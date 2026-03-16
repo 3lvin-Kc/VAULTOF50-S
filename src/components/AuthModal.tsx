@@ -47,11 +47,17 @@ export function AuthModal({ isOpen, onClose, initialMode = "login" }: AuthModalP
     setLoading(true);
     setError("");
     const fn = isSignUp ? signUpWithEmail : signInWithEmail;
-    const { error } = await fn(email, password);
+    const { error, data } = await fn(email, password);
     setLoading(false);
     if (error) return setError(error.message);
+    
     if (isSignUp) {
-      setEmailSent(true);
+      if (data?.session) {
+        onClose();
+        window.location.href = "/submit";
+      } else {
+        setEmailSent(true);
+      }
     } else {
       onClose();
       window.location.href = "/submit";
