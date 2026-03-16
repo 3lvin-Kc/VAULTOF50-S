@@ -36,6 +36,11 @@ export function useAuth() {
   const signUpWithEmail = (email: string, password: string) =>
     supabase.auth.signUp({ email, password });
 
+  const resetPasswordForEmail = (email: string) =>
+    supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/submit`,
+    });
+
   const signOut = () => supabase.auth.signOut();
 
   return {
@@ -45,6 +50,7 @@ export function useAuth() {
     signInWithGoogle,
     signInWithEmail,
     signUpWithEmail,
+    resetPasswordForEmail,
     signOut,
   };
 }

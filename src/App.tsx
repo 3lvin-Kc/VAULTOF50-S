@@ -12,10 +12,11 @@ import PartDetail from "./pages/PartDetail";
 import Community from "./pages/Community";
 import CommunityDetail from "./pages/CommunityDetail";
 import Submit from "./pages/Submit";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function BetaBanner() {
   const location = useLocation();
-  if (location.pathname === "/submit") return null;
+  if (location.pathname === "/submit" || location.pathname === "/forgot-password") return null;
   return (
     <div className="bg-black px-6 py-2 flex items-center justify-center gap-3">
       <span className="font-mono text-[10px] uppercase tracking-[3px] text-white">
@@ -30,7 +31,7 @@ function BetaBanner() {
 
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const showLayout = location.pathname !== "/submit";
+  const showLayout = !["/submit", "/forgot-password"].includes(location.pathname);
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -61,6 +62,7 @@ export default function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/community/:slug" element={<CommunityDetail />} />
           <Route path="/submit" element={<Submit />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Layout>
     </BrowserRouter>

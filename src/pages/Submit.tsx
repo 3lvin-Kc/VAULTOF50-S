@@ -37,179 +37,6 @@ const SUBMIT_STYLES = `
     50%       { transform: scaleX(1);   opacity: 1;   }
   }
 
-  /* ── Auth gate ── */
-  .auth-gate {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .auth-gate-inner {
-    max-width: 480px;
-    width: 100%;
-  }
-
-  .auth-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: #b43c2f;
-    margin-bottom: 1.25rem;
-  }
-
-  .auth-title {
-    font-family: 'UnifrakturMaguntia', cursive;
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    font-weight: 400;
-    color: #1f2328;
-    margin: 0 0 1rem;
-  }
-
-  .auth-desc {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: #000000;
-    margin: 0 0 2.5rem;
-  }
-
-  .auth-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .auth-btn-google {
-    background: #F5F0E8;
-    color: white;
-    border: none;
-    padding: 0.9rem 1.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .auth-btn-google:hover { background: #fff; }
-
-  .auth-divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #2a2a2a;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-  }
-
-  .auth-divider::before,
-  .auth-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #e5e5e5;
-  }
-
-  .auth-btn-email {
-    background: transparent;
-    color: #1f2328;
-    border: 1px solid #d1d5db;
-    padding: 0.9rem 1.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .auth-btn-email:hover { border-color: #b43c2f; color: #b43c2f; }
-  .auth-btn-email.secondary { color: #000000; }
-  .auth-btn-email.secondary:hover { color: #b43c2f; }
-
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .auth-input {
-    background: #f9fafb;
-    border: 1px solid #d1d5db;
-    color: #1f2328;
-    padding: 0.85rem 1rem;
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .auth-input:focus { border-color: #b43c2f; }
-
-  .auth-error {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    color: #b43c2f;
-    padding: 0.5rem 0;
-  }
-
-  .auth-btn-submit {
-    background: #b43c2f;
-    color: #1f2328;
-    border: none;
-    padding: 0.9rem 1.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .auth-btn-submit:hover:not(:disabled) { background: #b43c2f; }
-  .auth-btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  .auth-back {
-    background: none;
-    border: none;
-    color: #000000;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    text-align: left;
-    transition: color 0.2s;
-  }
-
-  .auth-back:hover { color: #000000; }
-
-  .auth-sent {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: #b43c2f;
-    border: 1px solid #2a1a1a;
-    padding: 1.25rem;
-    background: #0f0505;
-    line-height: 1.7;
-  }
-
-  .submit-user-fixed {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    z-index: 10;
-  }
-
   .submit-back-btn {
     position: absolute;
     top: 1rem;
@@ -225,22 +52,6 @@ const SUBMIT_STYLES = `
 
   .submit-back-btn:hover {
     color: #b43c2f;
-  }
-
-  .submit-user-fixed .submit-user-email {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    color: #6b7280;
-  }
-
-  .submit-user-fixed .submit-signout {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    color: #b43c2f;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
   }
 
   /* ── Form page ── */
@@ -696,107 +507,7 @@ const SUBMIT_STYLES = `
   .contrib-confirm-no:hover { color: #aaa; }
 `;
 
-function AuthGate() {
-  const { signInWithEmail, signUpWithEmail } = useAuth();
-  const [mode, setMode] = useState<"choose" | "email-in" | "email-up">(
-    "choose",
-  );
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
-
-  const handleEmail = async (isSignUp: boolean) => {
-    if (!email || !password) return setError("Fill in both fields.");
-    setLoading(true);
-    setError("");
-    const fn = isSignUp ? signUpWithEmail : signInWithEmail;
-    const { error } = await fn(email, password);
-    setLoading(false);
-    if (error) return setError(error.message);
-    if (isSignUp) setEmailSent(true);
-  };
-
-  return (
-    <div className="auth-gate">
-      <div className="auth-gate-inner">
-        <div className="auth-eyebrow">Submit Your Writing</div>
-        <h2 className="auth-title">Sign in to continue</h2>
-        <p className="auth-desc">
-          You need an account to submit. Your piece goes to review before it
-          goes live — no spam, no noise, just horror writing that earns its
-          place.
-        </p>
-
-        {emailSent ? (
-          <div className="auth-sent">
-            <p>
-              Check your email to confirm your account, then come back and sign
-              in.
-            </p>
-          </div>
-        ) : mode === "choose" ? (
-          <div className="auth-options">
-            <button
-              className="auth-btn-email"
-              onClick={() => setMode("email-in")}
-            >
-              Sign in with Email
-            </button>
-            <button
-              className="auth-btn-email secondary"
-              onClick={() => setMode("email-up")}
-            >
-              Create an Account
-            </button>
-          </div>
-        ) : (
-          <div className="auth-form">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="auth-input"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="auth-input"
-            />
-            {error && <div className="auth-error">{error}</div>}
-            <button
-              className="auth-btn-submit"
-              onClick={() => handleEmail(mode === "email-up")}
-              disabled={loading}
-            >
-              {loading
-                ? "..."
-                : mode === "email-up"
-                  ? "Create Account"
-                  : "Sign In"}
-            </button>
-            <button
-              className="auth-back"
-              onClick={() => {
-                setMode("choose");
-                setError("");
-              }}
-            >
-              ← Back
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 function SubmitForm({ userId }: { userId: string }) {
-  const { user, signOut } = useAuth();
   const { contributions } = useMyContributions(userId);
   const { remove, deleting } = useDeleteContribution();
 
@@ -812,7 +523,7 @@ function SubmitForm({ userId }: { userId: string }) {
     (c) => c.status === "pending",
   ).length;
 
-  const authorName = user?.email?.split("@")[0] || "Anonymous";
+  const authorName = "Anonymous";
 
   const handleSubmit = async () => {
     if (!title.trim()) return setError("Add a title.");
@@ -882,13 +593,6 @@ function SubmitForm({ userId }: { userId: string }) {
           </div>
         </div>
       )}
-
-      <div className="submit-user-fixed">
-        <span className="submit-user-email">{user?.email}</span>
-        <button className="submit-signout" onClick={signOut}>
-          Sign out
-        </button>
-      </div>
 
       <Link to="/community" className="submit-back-btn">
         ← Community
@@ -989,20 +693,26 @@ function SubmitForm({ userId }: { userId: string }) {
 export default function Submit() {
   const { user, loading } = useAuth();
 
-  return (
-    <div className="submit-page">
-      {/* Styles always injected — regardless of auth state */}
-      <style>{SUBMIT_STYLES}</style>
-
-      {loading ? (
+  if (loading) {
+    return (
+      <div className="submit-page">
+        <style>{SUBMIT_STYLES}</style>
         <div className="submit-loading">
           <div className="loading-bar" />
         </div>
-      ) : user ? (
-        <SubmitForm userId={user.id} />
-      ) : (
-        <AuthGate />
-      )}
+      </div>
+    );
+  }
+
+  if (!user) {
+    window.location.href = "/";
+    return null;
+  }
+
+  return (
+    <div className="submit-page">
+      <style>{SUBMIT_STYLES}</style>
+      <SubmitForm userId={user.id} />
     </div>
   );
 }
