@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -9,14 +9,8 @@ import BlogDetail from "./pages/BlogDetail";
 import Threads from "./pages/Threads";
 import SeriesDetail from "./pages/SeriesDetail";
 import PartDetail from "./pages/PartDetail";
-import Community from "./pages/Community";
-import CommunityDetail from "./pages/CommunityDetail";
-import Submit from "./pages/Submit";
-import ForgotPassword from "./pages/ForgotPassword";
 
 function BetaBanner() {
-  const location = useLocation();
-  if (location.pathname === "/submit" || location.pathname === "/forgot-password") return null;
   return (
     <div className="bg-black px-6 py-2 flex items-center justify-center gap-3">
       <span className="font-mono text-[10px] uppercase tracking-[3px] text-white">
@@ -30,15 +24,12 @@ function BetaBanner() {
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  const showLayout = !["/submit", "/forgot-password"].includes(location.pathname);
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {showLayout && <Navbar />}
+      <Navbar />
       <BetaBanner />
       <main className="flex-1">{children}</main>
-      {showLayout && <Footer />}
+      <Footer />
     </div>
   );
 }
@@ -59,10 +50,6 @@ export default function App() {
             path="/threads/:seriesSlug/:partSlug"
             element={<PartDetail />}
           />
-          <Route path="/community" element={<Community />} />
-          <Route path="/community/:slug" element={<CommunityDetail />} />
-          <Route path="/submit" element={<Submit />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Layout>
     </BrowserRouter>
