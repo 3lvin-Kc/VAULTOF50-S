@@ -46,14 +46,6 @@ export const BLOG_RELATED_LINKS: Record<string, RelatedLink[]> = {
     },
   ],
 
-  "canadian-horror-body": [
-    {
-      label: "American Horror — The Country Confronting Itself",
-      href: "/blog/usa-horror-blaxploitation",
-      type: "blog",
-    },
-  ],
-
   "french-horror-unease": [
     {
       label: "Germany — The Visual Language of Horror",
@@ -73,19 +65,9 @@ export const BLOG_RELATED_LINKS: Record<string, RelatedLink[]> = {
       href: "/threads/dracula/stoker-and-the-source",
       type: "thread",
     },
-    {
-      label: "Poland — History as Monster",
-      href: "/blog/polish-horror-darkness",
-      type: "blog",
-    },
   ],
 
   "japanese-horror-50-years": [
-    {
-      label: "Japan — Nudity Quotas and Experimental Horror",
-      href: "/blog/japan-horror-pink-film",
-      type: "blog",
-    },
     {
       label: "Japan Builds the Wrong House",
       href: "/threads/haunted-house/japan-builds-the-wrong-house",
@@ -95,22 +77,6 @@ export const BLOG_RELATED_LINKS: Record<string, RelatedLink[]> = {
       label: "Japan Makes Frankenstein Giant",
       href: "/threads/frankenstein/japan-makes-it-giant",
       type: "thread",
-    },
-  ],
-
-  "korean-horror-han": [
-    {
-      label: "Japanese Horror — Personal Before Anyone Else",
-      href: "/blog/japanese-horror-50-years",
-      type: "blog",
-    },
-  ],
-
-  "polish-horror-darkness": [
-    {
-      label: "Germany — The Visual Language of Horror",
-      href: "/blog/german-horror-expressionism",
-      type: "blog",
     },
   ],
 
@@ -127,69 +93,9 @@ export const BLOG_RELATED_LINKS: Record<string, RelatedLink[]> = {
     },
   ],
 
-  "swedish-horror-cold": [
-    {
-      label: "Polish Horror — History as Monster",
-      href: "/blog/polish-horror-darkness",
-      type: "blog",
-    },
-  ],
-
-  "thai-horror-spirits": [
-    {
-      label: "Korean Horror Carries Something That Does Not Translate",
-      href: "/blog/korean-horror-han",
-      type: "blog",
-    },
-  ],
-
-  "turkish-horror-yesiclam": [
-    {
-      label: "Frankenstein in Turkey",
-      href: "/threads/frankenstein/frankenstein-in-turkey",
-      type: "thread",
-    },
-    {
-      label: "Dracula Goes East",
-      href: "/threads/dracula/dracula-goes-east",
-      type: "thread",
-    },
-  ],
-
-  "yugoslav-horror-tito": [
-    {
-      label: "Polish Horror — History as Monster",
-      href: "/blog/polish-horror-darkness",
-      type: "blog",
-    },
-    {
-      label: "Germany — The Visual Language of Horror",
-      href: "/blog/german-horror-expressionism",
-      type: "blog",
-    },
-  ],
-
-  "argentine-horror-disappeared": [
-    {
-      label: "Spanish Horror Under a Dictatorship",
-      href: "/blog/spanish-horror-dark-sun",
-      type: "blog",
-    },
-    {
-      label: "Yugoslav Horror Under Tito",
-      href: "/blog/yugoslav-horror-tito",
-      type: "blog",
-    },
-  ],
-
   // GENRE BLOGS
 
   "usa-horror-blaxploitation": [
-    {
-      label: "Canada Gave Horror Its Body Back",
-      href: "/blog/canadian-horror-body",
-      type: "blog",
-    },
     {
       label: "America After Universal — Frankenstein",
       href: "/threads/frankenstein/america-after-universal",
@@ -245,19 +151,6 @@ export const BLOG_RELATED_LINKS: Record<string, RelatedLink[]> = {
       label: "Germany — The Visual Language of Horror",
       href: "/blog/german-horror-expressionism",
       type: "blog",
-    },
-  ],
-
-  "japan-horror-pink-film": [
-    {
-      label: "Japan Made Horror Personal Before Anyone Else",
-      href: "/blog/japanese-horror-50-years",
-      type: "blog",
-    },
-    {
-      label: "Japan Builds the Wrong House",
-      href: "/threads/haunted-house/japan-builds-the-wrong-house",
-      type: "thread",
     },
   ],
 };
@@ -324,11 +217,6 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
       type: "blog",
     },
     {
-      label: "Canada Gave Horror Its Body Back",
-      href: "/blog/canadian-horror-body",
-      type: "blog",
-    },
-    {
       label: "America Reinvents the Vampire",
       href: "/threads/dracula/america-reinvents-the-vampire",
       type: "thread",
@@ -336,11 +224,6 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
   ],
 
   "frankenstein-in-turkey": [
-    {
-      label: "Turkish Horror — Yesilcam and the Art of Remaking",
-      href: "/blog/turkish-horror-yesiclam",
-      type: "blog",
-    },
     {
       label: "Dracula Goes East",
       href: "/threads/dracula/dracula-goes-east",
@@ -362,11 +245,6 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
   ],
 
   "the-idea-survives": [
-    {
-      label: "Canada Gave Horror Its Body Back",
-      href: "/blog/canadian-horror-body",
-      type: "blog",
-    },
     {
       label: "American Horror — The Country Confronting Itself",
       href: "/blog/usa-horror-blaxploitation",
@@ -442,11 +320,6 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
 
   "dracula-goes-east": [
     {
-      label: "Turkish Horror — Yesilcam and the Art of Remaking",
-      href: "/blog/turkish-horror-yesiclam",
-      type: "blog",
-    },
-    {
       label: "Frankenstein in Turkey",
       href: "/threads/frankenstein/frankenstein-in-turkey",
       type: "thread",
@@ -457,11 +330,6 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
     {
       label: "American Horror — The Country Confronting Itself",
       href: "/blog/usa-horror-blaxploitation",
-      type: "blog",
-    },
-    {
-      label: "Canada Gave Horror Its Body Back",
-      href: "/blog/canadian-horror-body",
       type: "blog",
     },
     {
@@ -600,22 +468,12 @@ export const THREAD_RELATED_LINKS: Record<string, RelatedLink[]> = {
       href: "/blog/usa-horror-blaxploitation",
       type: "blog",
     },
-    {
-      label: "Canada Gave Horror Its Body Back",
-      href: "/blog/canadian-horror-body",
-      type: "blog",
-    },
   ],
 
   "japan-builds-the-wrong-house": [
     {
       label: "Japan Made Horror Personal Before Anyone Else",
       href: "/blog/japanese-horror-50-years",
-      type: "blog",
-    },
-    {
-      label: "Japan — Nudity Quotas and Experimental Horror",
-      href: "/blog/japan-horror-pink-film",
       type: "blog",
     },
     {
