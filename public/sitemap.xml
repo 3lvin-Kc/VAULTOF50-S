@@ -21,35 +21,20 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://vault-50.co/community</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/submit</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
-  <!-- Blog Pages -->
+  <!-- Blog Pages - Countries -->
   <url>
     <loc>https://vault-50.co/blog/italian-horror-1970s-giallo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/uk-hammer-horror</loc>
+    <loc>https://vault-50.co/blog/japanese-horror-50-years</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/canadian-horror-body</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/french-horror-unease</loc>
+    <loc>https://vault-50.co/blog/spanish-horror-dark-sun</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -59,49 +44,21 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/japanese-horror-50-years</loc>
+    <loc>https://vault-50.co/blog/uk-hammer-horror</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/korean-horror-han</loc>
+    <loc>https://vault-50.co/blog/french-horror-unease</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Pages - Genres -->
   <url>
-    <loc>https://vault-50.co/blog/polish-horror-darkness</loc>
+    <loc>https://vault-50.co/blog/italy-horror-giallo-collision</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/spanish-horror-dark-sun</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/swedish-horror-cold</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/thai-horror-spirits</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/turkish-horror-yesiclam</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/yugoslav-horror-tito</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/blog/argentine-horror-disappeared</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vault-50.co/blog/usa-horror-blaxploitation</loc>
@@ -114,36 +71,26 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/italy-horror-giallo-collision</loc>
+    <loc>https://vault-50.co/blog/messiah-of-evil</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/blog/japan-horror-pink-film</loc>
+    <loc>https://vault-50.co/blog/carnival-of-souls</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vault-50.co/blog/living-skeleton</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Thread Series -->
+  <!-- Thread Series - Frankenstein Only -->
   <url>
     <loc>https://vault-50.co/threads/frankenstein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Thread Parts - Frankenstein -->
@@ -163,113 +110,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vault-50.co/threads/frankenstein/america-after-universal</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/frankenstein/frankenstein-in-turkey</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://vault-50.co/threads/frankenstein/japan-makes-it-giant</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/frankenstein/the-idea-survives</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Thread Parts - Dracula -->
-  <url>
-    <loc>https://vault-50.co/threads/dracula/stoker-and-the-source</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula/hammer-owns-the-count</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula/europe-takes-the-count</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula/dracula-goes-east</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula/america-reinvents-the-vampire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/dracula/what-the-vampire-became</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Thread Parts - Mummy -->
-  <url>
-    <loc>https://vault-50.co/threads/mummy/egypt-and-the-west</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy/universal-runs-it-into-the-ground</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy/hammer-and-the-colonial-wound</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy/egypt-makes-its-own-mummy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy/the-mummy-disappears</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/mummy/the-blockbuster-buries-it</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Thread Parts - Haunted House -->
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house/the-house-is-the-monster</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house/the-shining-and-the-american-house</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house/japan-builds-the-wrong-house</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house/italy-spain-and-the-decaying-house</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vault-50.co/threads/haunted-house/the-house-never-ends</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
