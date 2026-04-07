@@ -21,7 +21,11 @@ async function fetchAllMovies(supabase) {
       .order('release_year', { ascending: true })
       .range(from, from + pageSize - 1)
 
-    if (error || !data || data.length === 0) break
+    if (error) {
+      console.error(`fetchAllMovies: page ${from / pageSize} failed —`, error.message ?? error)
+      throw error
+    }
+    if (!data || data.length === 0) break
     allMovies = [...allMovies, ...data]
     hasMore = data.length === pageSize
     from += pageSize
