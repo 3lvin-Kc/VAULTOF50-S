@@ -8,6 +8,28 @@ const supabase = createClient(
 
 const BASE_URL = 'https://vault-50.co'
 
+async function fetchAllMovies(supabase) {
+  const pageSize = 1000
+  let allMovies = []
+  let from = 0
+  let hasMore = true
+
+  while (hasMore) {
+    const { data, error } = await supabase
+      .from('movies')
+      .select('id, title, original_title, release_year, original_language, updated_at')
+      .order('release_year', { ascending: true })
+      .range(from, from + pageSize - 1)
+
+    if (error || !data || data.length === 0) break
+    allMovies = [...allMovies, ...data]
+    hasMore = data.length === pageSize
+    from += pageSize
+  }
+
+  return allMovies
+}
+
 async function generateSitemap() {
   // Fetch published blogs
   const { data: blogs } = await supabase
@@ -21,11 +43,8 @@ async function generateSitemap() {
     .select('slug, title, subtitle, description, series_parts(slug, title, subtitle, part_number)')
     .eq('is_published', true)
 
-  // Fetch all movies with extra data for llms-full.txt
-  const { data: movies } = await supabase
-    .from('movies')
-    .select('id, title, original_title, release_year, original_language, updated_at')
-    .order('release_year', { ascending: true })
+  // Fetch all movies with extra data for llms-full.txt (paginated to bypass 1,000 row limit)
+  const movies = await fetchAllMovies(supabase)
 
   // ── Generate sitemap.xml ──────────────────────────────────
 
