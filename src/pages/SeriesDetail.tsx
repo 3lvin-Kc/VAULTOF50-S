@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useSeries } from "../hooks/useSeries";
 import { Helmet } from "react-helmet-async";
-import { pageTitle } from "../utils/seo";
+import { pageTitle, SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE, canonicalUrl } from "../utils/seo";
 
 export default function SeriesDetail() {
   const { seriesSlug } = useParams<{ seriesSlug: string }>();
@@ -34,7 +34,42 @@ export default function SeriesDetail() {
       {series && (
         <Helmet>
           <title>{pageTitle(`The ${series.title} Tradition in World Cinema`)}</title>
-          <meta name="description" content={series.subtitle || ""} />
+          <meta name="description" content={series.description || series.subtitle || ""} />
+          <link rel="canonical" href={canonicalUrl(`/threads/${series.slug}`)} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:title" content={`The ${series.title} Tradition in World Cinema`} />
+          <meta property="og:description" content={series.description || series.subtitle || ""} />
+          <meta property="og:url" content={canonicalUrl(`/threads/${series.slug}`)} />
+          <meta property="og:image" content={series.cover_image || DEFAULT_OG_IMAGE} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`The ${series.title} Tradition in World Cinema`} />
+          <meta name="twitter:description" content={series.description || series.subtitle || ""} />
+          <meta name="twitter:image" content={series.cover_image || DEFAULT_OG_IMAGE} />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": `The ${series.title} Tradition in World Cinema`,
+              "description": series.description || series.subtitle,
+              "author": {
+                "@type": "Organization",
+                "name": "VaultOf50",
+                "url": SITE_URL
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "VaultOf50",
+                "url": SITE_URL
+              },
+              "url": canonicalUrl(`/threads/${series.slug}`),
+              "hasPart": (series.parts || []).map((part) => ({
+                "@type": "Article",
+                "name": part.title,
+                "url": canonicalUrl(`/threads/${series.slug}/${part.slug}`)
+              }))
+            })}
+          </script>
         </Helmet>
       )}
       {/* Header */}

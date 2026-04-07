@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import type { Movie } from "../lib/database.types";
 import { Helmet } from "react-helmet-async";
-import { STATIC_SEO } from "../utils/seo";
+import { STATIC_SEO, SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "../utils/seo";
 
 const FEATURED_MOVIE_ID = 823; // Set to movie ID you want featured, or null for auto
 
@@ -48,6 +48,36 @@ export default function Home() {
       <Helmet>
         <title>{STATIC_SEO.home.title}</title>
         <meta name="description" content={STATIC_SEO.home.description} />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={STATIC_SEO.home.title} />
+        <meta property="og:description" content={STATIC_SEO.home.description} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={STATIC_SEO.home.title} />
+        <meta name="twitter:description" content={STATIC_SEO.home.description} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": STATIC_SEO.home.title,
+            "description": STATIC_SEO.home.description,
+            "url": SITE_URL,
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": SITE_NAME,
+              "url": SITE_URL
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "Horror Films 1950–2000"
+            },
+            "numberOfItems": total
+          })}
+        </script>
       </Helmet>
       <section className="border-b border-gray-200 px-6 py-8 md:py-10">
         <div className="mx-auto max-w-screen-xl">

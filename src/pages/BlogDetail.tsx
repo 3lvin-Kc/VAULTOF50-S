@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useBlog, useBlogMovies, useRelatedBlogs } from "../hooks/useBlogs";
 import { Helmet } from "react-helmet-async";
-import { pageTitle } from "../utils/seo";
+import { pageTitle, SITE_NAME, SITE_URL, canonicalUrl } from "../utils/seo";
 import { RelatedLinks } from "../components/RelatedLinks";
 import { BLOG_RELATED_LINKS } from "../utils/relatedLinks";
 
@@ -49,22 +49,49 @@ export default function BlogDetail() {
         <Helmet>
           <title>{pageTitle(blog.title)}</title>
           <meta name="description" content={blog.excerpt || ""} />
+          <link rel="canonical" href={canonicalUrl(`/blog/${blog.slug}`)} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:title" content={blog.title} />
+          <meta property="og:description" content={blog.excerpt || ""} />
+          <meta property="og:url" content={canonicalUrl(`/blog/${blog.slug}`)} />
+          {blog.cover_image && (
+            <meta property="og:image" content={blog.cover_image.startsWith("http") ? blog.cover_image : `https://image.tmdb.org/t/p/w780${blog.cover_image}`} />
+          )}
+          {blog.created_at && <meta property="article:published_time" content={blog.created_at} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={blog.title} />
+          <meta name="twitter:description" content={blog.excerpt || ""} />
+          {blog.cover_image && (
+            <meta name="twitter:image" content={blog.cover_image.startsWith("http") ? blog.cover_image : `https://image.tmdb.org/t/p/w780${blog.cover_image}`} />
+          )}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": blog.title,
               "description": blog.excerpt,
+              ...(blog.cover_image ? {
+                "image": blog.cover_image.startsWith("http")
+                  ? blog.cover_image
+                  : `https://image.tmdb.org/t/p/w780${blog.cover_image}`
+              } : {}),
+              ...(blog.created_at ? { "datePublished": blog.created_at } : {}),
               "author": {
                 "@type": "Organization",
-                "name": "VaultOf50"
+                "name": "VaultOf50",
+                "url": SITE_URL
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "VaultOf50",
-                "url": "https://vault-50.co"
+                "url": SITE_URL
               },
-              "url": `https://vault-50.co/blog/${blog.slug}`
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": canonicalUrl(`/blog/${blog.slug}`)
+              },
+              "url": canonicalUrl(`/blog/${blog.slug}`)
             })}
           </script>
         </Helmet>

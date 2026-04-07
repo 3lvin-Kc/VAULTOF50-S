@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useSeriesPart } from "../hooks/useSeries";
 import { useSeries } from "../hooks/useSeries";
 import { Helmet } from "react-helmet-async";
-import { pageTitle } from "../utils/seo";
+import { pageTitle, SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE, canonicalUrl } from "../utils/seo";
 import { RelatedLinks } from "../components/RelatedLinks";
 import { THREAD_RELATED_LINKS } from "../utils/relatedLinks";
 
@@ -65,26 +65,43 @@ export default function PartDetail() {
             {pageTitle(`${part.title} — ${series.title} Part ${part.part_number}`)}
           </title>
           <meta name="description" content={part.subtitle || ""} />
+          <link rel="canonical" href={canonicalUrl(`/threads/${seriesSlug}/${part.slug}`)} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:title" content={`${part.title} — ${series.title} Part ${part.part_number}`} />
+          <meta property="og:description" content={part.subtitle || ""} />
+          <meta property="og:url" content={canonicalUrl(`/threads/${seriesSlug}/${part.slug}`)} />
+          <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`${part.title} — ${series.title} Part ${part.part_number}`} />
+          <meta name="twitter:description" content={part.subtitle || ""} />
+          <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": `${part.title} — ${series.title} Part ${part.part_number}`,
               "description": part.subtitle,
+              ...(part.created_at ? { "datePublished": part.created_at } : {}),
               "author": {
                 "@type": "Organization",
-                "name": "VaultOf50"
+                "name": "VaultOf50",
+                "url": SITE_URL
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "VaultOf50",
-                "url": "https://vault-50.co"
+                "url": SITE_URL
               },
-              "url": `https://vault-50.co/threads/${seriesSlug}/${part.slug}`,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": canonicalUrl(`/threads/${seriesSlug}/${part.slug}`)
+              },
+              "url": canonicalUrl(`/threads/${seriesSlug}/${part.slug}`),
               "isPartOf": {
-                "@type": "Series",
+                "@type": "CreativeWorkSeries",
                 "name": series.title,
-                "url": `https://vault-50.co/threads/${seriesSlug}`
+                "url": canonicalUrl(`/threads/${seriesSlug}`)
               }
             })}
           </script>
