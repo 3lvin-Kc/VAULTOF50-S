@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useBlogs } from "../hooks/useBlogs";
 import { Helmet } from "react-helmet-async";
-import { STATIC_SEO } from "../utils/seo";
+import { STATIC_SEO, SITE_NAME, DEFAULT_OG_IMAGE, canonicalUrl } from "../utils/seo";
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
@@ -31,6 +31,17 @@ export default function Blog() {
       <Helmet>
         <title>{STATIC_SEO.blogs.title}</title>
         <meta name="description" content={STATIC_SEO.blogs.description} />
+        <link rel="canonical" href={canonicalUrl('/blog')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={STATIC_SEO.blogs.title} />
+        <meta property="og:description" content={STATIC_SEO.blogs.description} />
+        <meta property="og:url" content={canonicalUrl('/blog')} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={STATIC_SEO.blogs.title} />
+        <meta name="twitter:description" content={STATIC_SEO.blogs.description} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
       </Helmet>
       <div className="blog-header">
         <h1 className="blog-title">

@@ -1,10 +1,63 @@
-# Robots.txt for VaultOf50
+# Robots.txt for VaultOf50 — Horror Film Archive (vault-50.co)
 
+# All crawlers welcome
 User-agent: *
 Allow: /
+Disallow: /submit
 
-# Sitemap
+# Sitemaps
 Sitemap: https://vault-50.co/sitemap.xml
 
-# Disallow admin/private areas
-Disallow: /submit
+# AI / LLM crawlers — see our dedicated files
+# llms.txt:      https://vault-50.co/llms.txt
+# llms-full.txt: https://vault-50.co/llms-full.txt
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# ChatGPT
+User-agent: ChatGPT-User
+Allow: /
+
+# GPTBot (OpenAI crawler)
+User-agent: GPTBot
+Allow: /
+
+# Claude (Anthropic)
+User-agent: Claude-Web
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Gemini / Bard)
+User-agent: Google-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Crawl-delay for aggressive bots
+User-agent: *
+Crawl-delay: 1

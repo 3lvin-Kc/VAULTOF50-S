@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAllSeries } from "../hooks/useSeries";
 import type { Series } from "../services/series";
 import { Helmet } from "react-helmet-async";
-import { STATIC_SEO } from "../utils/seo";
+import { STATIC_SEO, SITE_NAME, DEFAULT_OG_IMAGE, canonicalUrl } from "../utils/seo";
 
 function SeriesCard({ s }: { s: Series }) {
   const allCountries = Array.from(
@@ -75,6 +75,17 @@ export default function Threads() {
       <Helmet>
         <title>{STATIC_SEO.threads.title}</title>
         <meta name="description" content={STATIC_SEO.threads.description} />
+        <link rel="canonical" href={canonicalUrl('/threads')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={STATIC_SEO.threads.title} />
+        <meta property="og:description" content={STATIC_SEO.threads.description} />
+        <meta property="og:url" content={canonicalUrl('/threads')} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={STATIC_SEO.threads.title} />
+        <meta name="twitter:description" content={STATIC_SEO.threads.description} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
       </Helmet>
       <div className="threads-header">
         <div className="threads-header-inner">

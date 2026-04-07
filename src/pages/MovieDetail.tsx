@@ -4,7 +4,7 @@ import { useMovieDetail, useSimilarMovies } from "../hooks/useMovies";
 import { getPosterUrl, getBackdropUrl } from "../services/movies";
 import MovieCard from "../components/movie/MovieCard";
 import { Helmet } from "react-helmet-async";
-import { pageTitle } from "../utils/seo";
+import { pageTitle, SITE_NAME, SITE_URL, ogImageUrl, canonicalUrl } from "../utils/seo";
 
 function money(value: number | null): string {
   if (!value) return "Unknown";
@@ -77,18 +77,62 @@ export default function MovieDetail() {
                 : `${movie.title} — horror film from ${movie.release_year} in the VaultOf50 archive.`
             }
           />
+          <link rel="canonical" href={canonicalUrl(`/movie/${movie.id}`)} />
+          <meta property="og:type" content="video.movie" />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:title" content={`${movie.title} (${movie.release_year})`} />
+          <meta property="og:description" content={movie.overview ? movie.overview.slice(0, 200) : `${movie.title} — horror film from ${movie.release_year} in the VaultOf50 archive.`} />
+          <meta property="og:url" content={canonicalUrl(`/movie/${movie.id}`)} />
+          <meta property="og:image" content={ogImageUrl(movie.backdrop_path || movie.poster_path, 'w1280')} />
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="720" />
+          {movie.release_date && <meta property="og:video:release_date" content={movie.release_date} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`${movie.title} (${movie.release_year})`} />
+          <meta name="twitter:description" content={movie.overview ? movie.overview.slice(0, 200) : `${movie.title} — horror film from ${movie.release_year}`} />
+          <meta name="twitter:image" content={ogImageUrl(movie.backdrop_path || movie.poster_path, 'w1280')} />
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Movie",
               "name": movie.title,
+              ...(movie.original_title && movie.original_title !== movie.title ? { "alternateName": movie.original_title } : {}),
               "description": movie.overview,
-              "datePublished": String(movie.release_year),
+              "datePublished": movie.release_date || String(movie.release_year),
+              ...(movie.runtime ? { "duration": `PT${movie.runtime}M` } : {}),
+              ...(posterUrl ? { "image": posterUrl } : {}),
+              ...(movie.tmdb_rating ? {
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": movie.tmdb_rating,
+                  "bestRating": 10,
+                  "ratingCount": movie.tmdb_vote_count ?? 0
+                }
+              } : {}),
+              "genre": (movie.genres ?? []).map((g: { name: string }) => g.name),
+              ...(director ? {
+                "director": {
+                  "@type": "Person",
+                  "name": director.name
+                }
+              } : {}),
+              "actor": (movie.cast ?? []).slice(0, 5).map((a: { name: string }) => ({
+                "@type": "Person",
+                "name": a.name
+              })),
+              ...(movie.countries?.length ? {
+                "countryOfOrigin": movie.countries.map((c: { name: string }) => ({
+                  "@type": "Country",
+                  "name": c.name
+                }))
+              } : {}),
+              ...(movie.original_language ? { "inLanguage": movie.original_language } : {}),
               "publisher": {
                 "@type": "Organization",
-                "name": "VaultOf50"
+                "name": "VaultOf50",
+                "url": SITE_URL
               },
-              "url": `https://vault-50.co/movie/${movie.id}`
+              "url": canonicalUrl(`/movie/${movie.id}`)
             })}
           </script>
         </Helmet>

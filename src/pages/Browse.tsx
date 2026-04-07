@@ -5,7 +5,7 @@ import MovieGrid from "../components/movie/MovieGrid";
 import FilterBar from "../components/filters/FilterBar";
 import type { MovieFilters } from "../services/movies";
 import { Helmet } from "react-helmet-async";
-import { STATIC_SEO } from "../utils/seo";
+import { STATIC_SEO, SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE, canonicalUrl } from "../utils/seo";
 
 const DECADES = [
   { label: "1950s", from: 1950, to: 1959 },
@@ -46,6 +46,17 @@ export default function Browse() {
       <Helmet>
         <title>{STATIC_SEO.browse.title}</title>
         <meta name="description" content={STATIC_SEO.browse.description} />
+        <link rel="canonical" href={canonicalUrl('/browse')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={STATIC_SEO.browse.title} />
+        <meta property="og:description" content={STATIC_SEO.browse.description} />
+        <meta property="og:url" content={canonicalUrl('/browse')} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={STATIC_SEO.browse.title} />
+        <meta name="twitter:description" content={STATIC_SEO.browse.description} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
       </Helmet>
       <div className="border-b border-gray-200 px-6 py-12">
         <p className="font-mono text-[11px] uppercase tracking-[4px] text-red-700 mb-3">
