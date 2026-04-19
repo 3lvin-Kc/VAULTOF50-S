@@ -1,0 +1,64 @@
+# VaultOf50
+
+> A horror film archive covering 1950–2000. 8,000+ films. Every country. Every decade. Built by fans who take horror seriously.
+
+VaultOf50 is the most comprehensive archive of horror cinema from the second half of the 20th century. The database covers films from 1950 to 2000 across every country that produced horror — from Hollywood to Italy, Japan, Mexico, Spain, Germany, the UK, Hong Kong, India, and dozens more.
+
+## Website
+
+- URL: https://vault-50.co
+- Status: BETA (actively updated)
+
+## Sections
+
+- [Home](https://vault-50.co/): Featured films and latest additions
+- [Browse](https://vault-50.co/browse): Search and filter all 8,000+ films by decade, country, language, and rating
+- [Blog — Genre Deep Dives](https://vault-50.co/blog): Long-form essays on horror subgenres (Giallo, Hammer Horror, J-Horror, Blaxploitation, etc.)
+- [Blog — Country Profiles](https://vault-50.co/blog): Essays on horror cinema by country (Italy, Japan, UK, Germany, Spain, Mexico, etc.)
+- [Threads](https://vault-50.co/threads): Multi-part series following one monster or concept across world cinema and decades
+
+## Thread Series
+
+Each Thread follows a single horror archetype across borders and decades:
+
+- **Frankenstein**: The monster tradition from Mary Shelley to global reinterpretation
+- **Dracula**: The vampire across world cinema — from Nosferatu to Hammer to international variants
+- **The Mummy**: Ancient horror from Universal to Hammer to world cinema
+- **Haunted House**: The architecture of fear across cultures — from The Haunting to Hausu
+
+## Film Data
+
+Each film entry includes:
+- Title, original title, release year, runtime, language
+- Plot overview and tagline
+- Director, writers, and top-billed cast
+- Countries of origin
+- TMDB rating and vote count
+- Budget and revenue (when available)
+- Production notes and behind-the-scenes facts
+- Poster and backdrop images
+- Links to streaming availability and Archive.org
+
+## Coverage by Decade
+
+- **1950s**: Early atomic-age horror, creature features, gothic revival
+- **1960s**: Psycho-era psychological horror, Hammer Films peak, Italian Gothic
+- **1970s**: Golden age — The Exorcist, Texas Chain Saw, Giallo, exploitation, New Hollywood horror
+- **1980s**: Slasher boom, practical FX golden age, horror-comedy, VHS era
+- **1990s**: Post-modern horror, Scream revival, J-Horror emergence, New French Extremity origins
+
+## Coverage by Region
+
+- **North America**: Hollywood studio horror, independent, Canadian horror
+- **Europe**: Italian Giallo/Gothic, British Hammer, Spanish horror, German Expressionist legacy, French horror, Scandinavian
+- **Asia**: Japanese horror (kaidan to J-Horror), Hong Kong, South Korean, Indian, Thai, Filipino
+- **Latin America**: Mexican horror (Santo, Coffin Joe), Argentine, Brazilian
+- **Other**: Australian, African, Middle Eastern horror cinema
+
+## Content Type
+
+All editorial content is original long-form writing — essays, deep dives, historical analysis. No user-generated reviews. No AI-generated content.
+
+## For More Detail
+
+See the full version with film index: https://vault-50.co/llms-full.txt
