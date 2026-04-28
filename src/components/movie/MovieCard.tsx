@@ -1,5 +1,7 @@
+'use client';
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { getPosterUrl } from "../../services/movies";
 import type { Movie } from "../../lib/database.types";
 
@@ -13,7 +15,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
 
   return (
     <Link
-      to={`/movie/${movie.id}`}
+      href={`/movie/${movie.id}`}
       className="group relative block bg-[#f8f3ea] border border-[#d9d2c4] aspect-[2/3] cursor-pointer hover:border-[#b43c2f] transition-colors"
     >
       {posterUrl && !imgError ? (

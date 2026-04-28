@@ -1,7 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap');
+}
+
+@font-face {
+  font-family: 'UnifrakturMaguntia';
+  src: url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+}
+
 :root {
   color: #1f2328;
+  background-color: #ffffff;
+  --font-garamond: 'EB Garamond', Georgia, serif;
+  --font-unifraktur: 'UnifrakturMaguntia', cursive;
+}
+
+html {
   background-color: #ffffff;
 }
 

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
 import type { RelatedLink } from "../utils/relatedLinks";
 
 interface Props {
@@ -76,7 +78,7 @@ export function RelatedLinks({ links }: Props) {
         <ul className="related-links-list">
           {links.map((link) => (
             <li key={link.href} className="related-links-item">
-              <Link to={link.href}>
+              <Link href={link.href}>
                 {link.label}
                 <span className="related-links-badge">{link.type}</span>
               </Link>

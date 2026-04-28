@@ -1,5 +1,8 @@
+'use client';
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Browse", path: "/browse" },
@@ -14,14 +17,13 @@ function isActive(path: string, current: string): boolean {
 }
 
 export default function Navbar() {
-  const location = useLocation();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const current = `${location.pathname}${location.search}`;
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-md">
       <div className="mx-auto max-w-screen-xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-1 group">
+        <Link href="/" className="flex items-baseline gap-1 group">
           <span
             style={{ fontFamily: "'UnifrakturMaguntia', cursive" }}
             className="text-2xl text-red-700"
@@ -40,9 +42,9 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <li key={link.path}>
               <Link
-                to={link.path}
+                href={link.path}
                 className={`font-mono text-[11px] uppercase tracking-[3px] transition-colors duration-200 ${
-                  isActive(link.path, current)
+                  isActive(link.path, pathname)
                     ? "text-gray-800"
                     : "text-gray-500 hover:text-gray-800"
                 }`}
@@ -81,7 +83,7 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link.path}
-              to={link.path}
+              href={link.path}
               onClick={() => setMenuOpen(false)}
               className="font-mono text-[11px] uppercase tracking-[3px] text-gray-500 hover:text-gray-800 transition-colors"
             >
