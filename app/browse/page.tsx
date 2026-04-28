@@ -3,14 +3,34 @@ import { Metadata } from 'next';
 const SITE_URL = 'https://vault-50.co';
 
 export const metadata: Metadata = {
-  title: 'Browse Horror Films 1950–2000 | VaultOf50',
+  title: 'Browse Horror Films 1950–2000 | Advanced Search & Filters | VaultOf50',
   description:
-    'Search and filter 8,000+ horror films by country, decade, genre and language.',
+    'Advanced search and filtering of 8,000+ horror films. Filter by country, decade, genre, language, director, and more. Discover hidden gems and classic horror movies.',
+  keywords: [
+    'browse horror films',
+    'search horror movies',
+    'horror film database',
+    'filter horror movies',
+    'classic horror films',
+    'horror by country',
+    'horror by decade',
+    'horror by genre',
+  ],
   openGraph: {
+    type: 'website',
     title: 'Browse Horror Films 1950–2000 | VaultOf50',
     description:
-      'Search and filter 8,000+ horror films by country, decade, genre and language.',
+      'Advanced search and filter 8,000+ horror films by country, decade, genre, language, and more.',
     url: `${SITE_URL}/browse`,
+    siteName: 'VaultOf50',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Browse Horror Films 1950–2000 | VaultOf50',
+    description: 'Search and filter 8,000+ horror films from every country and decade.',
+  },
+  alternates: {
+    canonical: `${SITE_URL}/browse`,
   },
 };
 

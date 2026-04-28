@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getPosterUrl } from "../../services/movies";
 import type { Movie } from "../../lib/database.types";
 
@@ -19,11 +20,15 @@ export default function MovieCard({ movie }: MovieCardProps) {
       className="group relative block bg-[#f8f3ea] border border-[#d9d2c4] aspect-[2/3] cursor-pointer hover:border-[#b43c2f] transition-colors"
     >
       {posterUrl && !imgError ? (
-        <img
+        <Image
           src={posterUrl}
-          alt={movie.title}
+          alt={`${movie.title} poster`}
           onError={() => setImgError(true)}
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+          quality={75}
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-[#efe7db] p-4">

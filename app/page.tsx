@@ -10,15 +10,46 @@ const SITE_URL = 'https://vault-50.co';
 const FEATURED_MOVIE_ID = 823;
 
 export const metadata: Metadata = {
-  title: 'VaultOf50 — Horror Film Archive 1950–2000',
+  title: 'VaultOf50 — Complete Horror Film Archive 1950–2000 | 8000+ Movies',
   description:
-    '8,000+ horror films from 1950 to 2000. Every country. Every decade. Built by fans who take horror seriously.',
+    'Discover 8,000+ horror films from 1950 to 2000. The most comprehensive horror film database covering every country and decade. Detailed reviews, cast, crew, and facts for classic horror movies.',
+  keywords: [
+    'horror films',
+    'horror movies',
+    'classic horror',
+    '1950s horror',
+    ' 1960s horror',
+    '1970s horror',
+    '1980s horror',
+    '1990s horror',
+    '2000s horror',
+    'horror film database',
+    'horror film archive',
+  ],
   openGraph: {
     type: 'website',
-    title: 'VaultOf50 — Horror Film Archive 1950–2000',
+    title: 'VaultOf50 — Complete Horror Film Archive 1950–2000',
     description:
-      '8,000+ horror films from 1950 to 2000. Every country. Every decade. Built by fans who take horror seriously.',
+      'The most comprehensive horror film database with 8,000+ movies from 1950 to 2000. Discover cast, crew, ratings, and facts.',
     url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'VaultOf50 Horror Film Archive',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VaultOf50 — Horror Film Archive 1950–2000',
+    description: 'Discover 8,000+ horror films from 1950 to 2000.',
+    images: [`${SITE_URL}/og-image.png`],
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 
@@ -110,16 +141,33 @@ export default async function Home() {
             '@type': 'CollectionPage',
             name: 'VaultOf50 — Horror Film Archive 1950–2000',
             description:
-              '8,000+ horror films from 1950 to 2000. Every country. Every decade.',
+              '8,000+ horror films from 1950 to 2000. Every country. Every decade. Built by fans who take horror seriously.',
             url: SITE_URL,
+            image: `${SITE_URL}/og-image.png`,
             isPartOf: {
               '@type': 'WebSite',
               name: SITE_NAME,
               url: SITE_URL,
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${SITE_URL}/search?q={search_term_string}`,
+                'query-input': 'required name=search_term_string',
+              },
             },
             about: {
               '@type': 'Thing',
               name: 'Horror Films 1950–2000',
+              description: 'A comprehensive archive of horror films from 1950 to 2000',
+            },
+            mainEntity: {
+              '@type': 'Dataset',
+              name: 'Horror Films Database 1950-2000',
+              description: '8,000+ horror films with cast, crew, ratings, and facts',
+              url: SITE_URL,
+              creator: {
+                '@type': 'Organization',
+                name: SITE_NAME,
+              },
             },
           }),
         }}

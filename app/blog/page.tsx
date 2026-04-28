@@ -3,14 +3,34 @@ import { Metadata } from 'next';
 const SITE_URL = 'https://vault-50.co';
 
 export const metadata: Metadata = {
-  title: 'Horror Film Essays | VaultOf50',
+  title: 'Horror Film Essays & Analysis | Giallo, Asian Horror, British Films | VaultOf50',
   description:
-    'Long-form writing on horror cinema from Italy, Japan, Britain, Spain and beyond.',
+    'In-depth essays and analysis on horror cinema from Italy, Japan, Britain, Spain and beyond. Deep dives into horror subgenres, national cinema, and iconic films from 1950-2000.',
+  keywords: [
+    'horror essays',
+    'horror analysis',
+    'giallo films',
+    'Asian horror',
+    'British horror',
+    'Spanish horror',
+    'horror cinema',
+    'horror film criticism',
+  ],
   openGraph: {
-    title: 'Horror Film Essays | VaultOf50',
+    type: 'website',
+    title: 'Horror Film Essays & Analysis | VaultOf50',
     description:
-      'Long-form writing on horror cinema from Italy, Japan, Britain, Spain and beyond.',
+      'In-depth essays and analysis on horror cinema. Read about giallo, Asian horror, British films, and more.',
     url: `${SITE_URL}/blog`,
+    siteName: 'VaultOf50',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Horror Film Essays & Analysis | VaultOf50',
+    description: 'In-depth essays on horror cinema from around the world.',
+  },
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
   },
 };
 
